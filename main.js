@@ -8,7 +8,7 @@ $(window).on("load", function(){
 
         var obj = new PhysicsObject(1, 1, 1, 1.7, 1);
         obj.setObjectColor("red");
-        obj.setAcceleration(9.8);
+        obj.yAcceleration = 9.8;
 
         var allTime = 0.0;
 
