@@ -27,16 +27,20 @@ class PhysicsObject extends BaseObject {
         this.yAcceleration = 0;
     }
 
-    set xAcceleration(val) {
-        if(this.yAcceleration !== undefined) {
-
-        }
+    setXAcceleration(newAccel) {
+        this.xAcceleration = newAccel;
+        this.totalAcceleration = this.calcTotalAcceleration();
+        console.log(this.totalAcceleration);
     }
 
-    set yAcceleration(val) {
-        if(this.xAcceleration !== undefined) {
+    setYAcceleration(newAccel) {
+        this.yAcceleration = newAccel;
+        this.totalAcceleration = this.calcTotalAcceleration();
+        console.log(this.totalAcceleration);
+    }
 
-        }
+    calcTotalAcceleration() {
+        return Math.sqrt(Math.pow(this.xAcceleration, 2) + Math.pow(this.yAcceleration,2));
     }
 
     updatePosition(time) { //Time since acceleration changed
